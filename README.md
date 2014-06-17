@@ -11,7 +11,7 @@ Does not contail MySQL database, but that can be added.
 
 This is the configuration file Vagrant needs to start up. This one assumes use of built in nework interface which on the your development maching should have the IP of 192.168.56.1. See file comments for more details on what does what.
 
-## vagrant-shell
+## vagrant-shell (dir)
 
 This directory contains all support files needed during first boot of the machine. 
 
