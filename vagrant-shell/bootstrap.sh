@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-#BELOW WILL STRT APACHE AFTER VAGRANT HAS MOUNTED
+#BELOW WILL START APACHE AFTER VAGRANT HAS MOUNTED
+#BASED ON SOLUTION FROM http://razius.com/articles/launching-services-after-vagrant-mount/
 echo "SUBSYSTEM==\"bdi\",ACTION==\"add\",RUN+=\"/usr/bin/screen -m -d bash -c 'sleep 5; service apache2 start'\"" > /etc/udev/rules.d/50-vagrant-mount.rules
 echo "SUBSYSTEM==\"bdi\",ACTION==\"remove\",RUN+=\"/usr/bin/screen -m -d bash -c 'sleep 5; service apache2 stop'\"" >> /etc/udev/rules.d/50-vagrant-mount.rules
 
@@ -30,7 +31,6 @@ echo "Enable additional apache modules"
 a2enmod ssl
 a2enmod rewrite
 a2enmod include
-
 
 #CONFIGURE XDEBUG
 cp -fr /vagrant/vagrant-shell/apache/xdebug.ini /etc/php5/conf.d/
