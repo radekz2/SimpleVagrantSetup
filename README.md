@@ -38,7 +38,7 @@ This directory contains all support files needed during first boot of the machin
 
 ## What if I need to add my own custom actions or files?
 
-If you need something executed then adding it to boostsrap.sh is one option. In case you need to store any support files, libs etc. that you want copied to the VM, just place them in *vagrant-shell* directory and reference it in *boostrap.sh* via path */vagrant/vagrant-shell/<your-file>*
+If you need something executed then adding it to boostsrap.sh is one option. In case you need to store any support files, libs etc. that you want copied to the VM, just place them in *vagrant-shell* directory and reference it in *boostrap.sh* via path */vagrant/vagrant-shell/your-file*
 
 
 
