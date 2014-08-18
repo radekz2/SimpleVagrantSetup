@@ -3,11 +3,13 @@ SimpleVagrantSetup
 
 Fairy basic set of Vagrant scripts to get an Ubuntu box provisioned and running Apache with PHP. It uses Vagrants provisioning to startup a new ubuntu server mount project directory using VirtualBox shared folders or NFS and expose a website over HTTPS.
 
+This setup assumes that you are using [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
 Does not contail MySQL database, but that can be added.
 
 # How does it work?
 
-Vagrant provides multiple ways of automatic setup of the virtual machine (provisioning). The key here is to configure components other than the machine itself into a working dev box. That means installing Apache, PHP etc.
+Vagrant provides multiple ways of automatically setting up virtual machines (provisioning). The key here is to configure components other than the machine itself into a working dev box. That means installing Apache, PHP etc.
 
 This project and file set use Vagrant's built-in provisioning mechanism. That means two things: 
 
@@ -18,7 +20,11 @@ So far this setup has worked well to host Symfony2 projects that do not require 
 
 # Installation
 
-Copy Vagrantfile and vagrant-shell into the root of your folder and run *vagrant up*
+1. Copy Vagrantfile and vagrant-shell into the root of your folder and run *vagrant up*
+2. Open Vagrantfile and modify (if needed) following lines
+..* **config.vm.network** -> change to IP of your choice of leave as is. By default VirtualBox will allow you assign IP in 192.168.56.x range. 
+
+**Tip:** If you or other devs are not allowed to modify their hosts file you can try and create DNS entries with your VM's IP using any DNS service, that includes local DNS servers or DNS server hosted by domain name retailers. This can help if you want to use real URLs for development, but are unable to modify host file. 
 
 # About files and folders
 
